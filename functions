@@ -1,0 +1,26 @@
+
+def line_count(text):
+  count = 1
+  if text[-1] == "\n":
+    count = 0
+  for i in text:
+    if i == "\n":
+      count = count + 1
+  return count
+
+def secret_message_keys(count):
+  nums_dic = {1:1}
+  while count > max(nums_dic):
+    highest_key = max(nums_dic)
+    count = count - highest_key
+    nums_dic[highest_key + 1] = nums_dic[highest_key] + highest_key + 1
+  return nums_dic
+
+def reorder_list():
+
+
+def find_words(numbers):
+  import regex as re
+  pattern = r'\b(?:' + '|'.join(str(numbers)) + r')\s+(\w+)'
+  matches = re.findall(pattern, text)
+  return matches
