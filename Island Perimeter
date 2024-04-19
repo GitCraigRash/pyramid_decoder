@@ -1,0 +1,51 @@
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        visited = []
+        perimeter = 0
+
+        def find_routes(cell):
+            
+
+
+
+
+        def prospect(grid,visited,perimeter)
+                
+
+        for i,row in enumerate(grid):
+            for k, cell in enumerate(row)
+                if cell == 1:
+                    
+                
+                
+
+        # define border cells 
+            # n  %  side = 0 
+            # OR n %  side = side - 1 
+            # OR n > side 
+            # OR n - side squared  < side
+        # check each cell for land
+        # once land is found start recurrsion
+            # add for to parameter total
+            # instantiate visited
+            # create list of possibile routes
+            # if route has already been visited
+                # subtract two from parameter
+            # Add cell to visited
+            # if no routes exist
+                # return parameter and visited cells
+            # Visit new cell
+        # if water is found in a internal cell, 
+        # call recurrsion
+            # instantiate water visited
+            # create list of possibile routes
+            # if route is boarder
+                # return 0
+            # if route is land
+                # Perimeter change + 1
+            # if route is water
+                # add to route
+            # Add cell to visited
+            # if no routes exist
+                # return parameter_change and visited cells
+            # Visit new cell
