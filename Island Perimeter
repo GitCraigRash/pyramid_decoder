@@ -4,20 +4,28 @@ class Solution:
         perimeter = 0
 
         def find_routes(cell):
+
+
+
+
+
+        def prospect(grid,visited,perimeter,boarders)
             
-
-
-
-
-        def prospect(grid,visited,perimeter)
-                
-
+        side = len(grid[0])
+        boarders = [
+                n % side,
+                n %  1 ,
+                OR n > side,
+                OR n - side squared  < side]
         for i,row in enumerate(grid):
             for k, cell in enumerate(row)
-                if cell == 1:
-                    
-                
-                
+                if cell == 1 and (i,k) not in visited:
+                    parimeter, visited = prospect()
+
+                if cell == - 0 and (i,k) not in visited:
+                    perimeter, visited = islake()
+        return perimeter
+
 
         # define border cells 
             # n  %  side = 0 
