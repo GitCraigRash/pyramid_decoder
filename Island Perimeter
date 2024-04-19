@@ -3,29 +3,29 @@ class Solution:
         visited = []
         perimeter = 0
 
+
         def find_routes(cell):
 
 
-
-
-
         def prospect(grid,visited,perimeter,boarders)
-            
-        side = len(grid[0])
-        boarders = [
-                n % side,
-                n %  1 ,
-                OR n > side,
-                OR n - side squared  < side]
-        for i,row in enumerate(grid):
-            for k, cell in enumerate(row)
-                if cell == 1 and (i,k) not in visited:
-                    parimeter, visited = prospect()
-
+        
+        
                 if cell == - 0 and (i,k) not in visited:
                     perimeter, visited = islake()
         return perimeter
 
+        def boarder(cell,perimeter):
+            if i = 0 or i = side:
+                return perimeter = 0
+            if k = 0 or k = side:
+                return perimeter = 0
+            return perimeter
+
+
+v       for i,row in enumerate(grid):
+            for k, cell in enumerate(row)
+                if cell == 1 and (i,k) not in visited:
+                    parimeter, visited = prospect()
 
         # define border cells 
             # n  %  side = 0 
