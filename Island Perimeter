@@ -5,30 +5,33 @@ class Solution:
         def find_routes(cell):
             
 
-        def prospect(grid,visited,perimeter)
+        def prospect(grid,visited,routes,perimeter):
             perimeter = perimeter + 4
-            if grid[visited[0][0]][visited[0][1]-1] = 1
+            if grid[routes[0][0]][routes[0][1]-1] = 1
                 perimeter - 2
-                if [visited[0][0],[visited[0][1]-1]] in visited == False:
-                    visited.append(visited[0][0],[visited[0][1]-1])
-            if grid[visited[0][0]][visited[0][1]+1] = 1
+                if [routes[0][0],[routes[0][1]-1]] in visited == False:
+                    visited.append(routes[0][0],[routes[0][1]-1])
+            if grid[routes[0][0]][routes[0][1]+1] = 1
                 perimeter - 2
-                if [[visited[0][0]],[visited[0][1]+1]] in visited == False:
-                    visited.append([[visited[0][0]],[visited[0][1]+1]])
-            if grid[[visited[0][0]-1][visited[0][1]] = 1
+                if [[routes[0][0]],[routes[0][1]+1]] in visited == False:
+                    visited.append([[routes[0][0]],[routes[0][1]+1]])
+            if grid[[routes[0][0]-1][routes[0][1]] = 1
                 perimeter - 2
-                if [visited[0][0]-1,[visited[0][1]]] in visited == False:
-                    visited.append(visited[0][0]-1,[visited[0][1])
-            if grid[visited[0][0]+1][visited[0][1]] = 1
+                if [routes[0][0]-1,[routes[0][1]]] in visited == False:
+                    visited.append(routes[0][0]-1,[routes[0][1])
+            if grid[routes[0][0]+1][routes[0][1]] = 1
                 perimeter - 2
-                if [visited[0][0]+1,[visited[0][1]]] in visited == False:
-                    visited.append(visited[0][0]+1,[visited[0][1]])
-            
+                if [routes[0][0]+1,[routes[0][1]]] in visited == False:
+                    visited.append(routes[0][0]+1,[routes[0][1]])
 
-        def is_lake(grid)
+            for m in routes:
+                parimeter = prospect(grid,visited,routes,perimeter)
+            return parimeter
+
+        def is_lake(grid):
                 if cell == - 0 and (i,k) not in visited:
                     perimeter, visited = islake()
-        return perimeter
+            return perimeter
 
         def boarder(cell,perimeter):
             if i = 0 or i = side:
@@ -43,7 +46,7 @@ class Solution:
             for k, cell in enumerate(row)
                 if cell == 1 and [i,k] not in visited:
                     visited.append([i,k])
-                    parimeter, visited = prospect(grid,visited,perimeter)
+                    parimeter, visited = prospect(grid,visited,routes,perimeter)
 
         # define border cells 
             # n  %  side = 0 
