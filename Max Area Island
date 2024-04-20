@@ -1,0 +1,86 @@
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+
+
+        def find_routes(cell):
+            
+
+        def prospect(grid,visited,routes,area):
+            if routes[-1] in visited:
+                routes.remove(routes[-1])
+                area = prospect(grid,visited,routes,parimeter)
+            area += 1
+
+            
+           if grid[routes[0][0]][routes[0][1]-1] = 1
+                perimeter - 2
+                if [routes[0][0],[routes[0][1]-1]] in visited == False:
+                    visited.append(routes[0][0],[routes[0][1]-1])
+            if grid[routes[0][0]][routes[0][1]+1] = 1
+                perimeter - 2
+                if [[routes[0][0]],[routes[0][1]+1]] in visited == False:
+                    visited.append([[routes[0][0]],[routes[0][1]+1]])
+            if grid[[routes[0][0]-1][routes[0][1]] = 1
+                perimeter - 2
+                if [routes[0][0]-1,[routes[0][1]]] in visited == False:
+                    visited.append(routes[0][0]-1,[routes[0][1])
+            if grid[routes[0][0]+1][routes[0][1]] = 1
+                perimeter - 2
+                if [routes[0][0]+1,[routes[0][1]]] in visited == False:
+                    visited.append(routes[0][0]+1,[routes[0][1]])
+
+
+            for m in routes:
+                parimeter = prospect(grid,visited,routes,perimeter)
+            return parimeter
+
+
+
+        def boarder(cell,perimeter):
+            if i = 0 or i = side:
+                return perimeter = 0
+            if k = 0 or k = side:
+                return perimeter = 0
+            return perimeter
+
+        visited = []
+        perimeter = 0
+        routes = []
+        for i,row in enumerate(grid):
+            for k, cell in enumerate(row)
+                if cell == 1 and [i,k] not in visited:
+                    visited.append([i,k])
+                    area, visited = prospect(grid,visited,routes,area)
+
+        # define border cells 
+            # n  %  side = 0 
+            # OR n %  side = side - 1 
+            # OR n > side 
+            # OR n - side squared  < side
+        # check each cell for land
+        # once land is found start recurrsion
+            # add for to parameter total
+            # instantiate visited
+            # create list of possibile routes
+            # if route has already been visited
+                # subtract two from parameter
+            # Add cell to visited
+            # if no routes exist
+                # return parameter and visited cells
+            # Visit new cell
+        # if water is found in a internal cell, 
+        # call recurrsion
+            # instantiate water visited
+            # create list of possibile routes
+            # if route is boarder
+                # return 0
+            # if route is land
+                # Perimeter change + 1
+            # if route is water
+                # add to route
+            # Add cell to visited
+            # if no routes exist
+                # return parameter_change and visited cells
+            # Visit new cell
