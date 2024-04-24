@@ -1,58 +1,64 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        class Solution:
-    def islandPerimeter(self, grid: List[List[int]]) -> int:
 
+        def prospect(grid,visited,routes):
+            route_limit = len(routes)-1
 
-        def find_routes(cell):
-            
+            if routes[0][1] != 0:
+                print("1a",grid[routes[0][0]][routes[0][1]-1])
+                if grid[routes[0][0]][routes[0][1]-1] == 1:
+                    print("1b")
+                    if [routes[0][0],routes[0][1]-1] in visited == False:
+                        print("1c")
+                        routes.append([routes[0][0],routes[0][1]-1])
+                        
+            if routes[0][1] != len(grid[0])-1:
+                print("2a")
+                if grid[routes[0][0]][routes[0][1]+1] == 1:
+                    print("2b",[routes[0][0],routes[0][1]+1])
+                    if [routes[0][0],routes[0][1]+1] in visited == False:
+                        print("2c")
+                        routes.append([routes[0][0],routes[0][1]+1])
+            if routes[0][0] != 0:
+                print("3a")
+                if grid[routes[0][0]-1][routes[0][1]] == 1:
+                    print("3b",[routes[0][0]-1,routes[0][1]])
+                    if [routes[0][0]-1,routes[0][1]] in visited == False:
+                        print("3c")
+                        routes.append([routes[0][0]-1, routes[0][1]])
+            if routes[0][0] != len(grid)-1:
+                print("4a")
+                if grid[routes[0][0]+1][routes[0][1]] == 1:
+                    print("4b")
+                    if [routes[0][0]+1, routes[0][1]] in visited == False:
+                        print("4c")
+                        routes.append([routes[0][0]+1,routes[0][1]])
+            print("new routes: ", routes[route_limit:])
+            visited.append(routes[0])
+            routes.remove(routes[0])
+            print("routes: ",routes)
+            print("visited: ",visited)
+            if routes == []:
+                return visited
+            while routes[0] not in visited:
+                visited = prospect(grid,visited,routes)
+            return visited
 
-        def prospect(grid,visited,routes,area):
-            if routes[-1] in visited:
-                routes.remove(routes[-1])
-                area = prospect(grid,visited,routes,parimeter)
-            area += 1
-
-            
-           if grid[routes[0][0]][routes[0][1]-1] = 1
-                perimeter - 2
-                if [routes[0][0],[routes[0][1]-1]] in visited == False:
-                    visited.append(routes[0][0],[routes[0][1]-1])
-            if grid[routes[0][0]][routes[0][1]+1] = 1
-                perimeter - 2
-                if [[routes[0][0]],[routes[0][1]+1]] in visited == False:
-                    visited.append([[routes[0][0]],[routes[0][1]+1]])
-            if grid[[routes[0][0]-1][routes[0][1]] = 1
-                perimeter - 2
-                if [routes[0][0]-1,[routes[0][1]]] in visited == False:
-                    visited.append(routes[0][0]-1,[routes[0][1])
-            if grid[routes[0][0]+1][routes[0][1]] = 1
-                perimeter - 2
-                if [routes[0][0]+1,[routes[0][1]]] in visited == False:
-                    visited.append(routes[0][0]+1,[routes[0][1]])
-
-
-            for m in routes:
-                parimeter = prospect(grid,visited,routes,perimeter)
-            return parimeter
-
-
-
-        def boarder(cell,perimeter):
-            if i = 0 or i = side:
-                return perimeter = 0
-            if k = 0 or k = side:
-                return perimeter = 0
-            return perimeter
 
         visited = []
-        perimeter = 0
+        islands = []
         routes = []
         for i,row in enumerate(grid):
-            for k, cell in enumerate(row)
+            for k, cell in enumerate(row):
                 if cell == 1 and [i,k] not in visited:
-                    visited.append([i,k])
-                    area, visited = prospect(grid,visited,routes,area)
+                    routes.append([i,k])
+                    visited_mask = len(visited)-1
+                    visited = prospect(grid,visited,routes)
+                    islands.append(len(visited[visited_mask:]))
+                    print("islands", islands)
+        if islands == []:
+            return 0
+        return max(islands)
 
         # define border cells 
             # n  %  side = 0 
