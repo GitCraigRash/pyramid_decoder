@@ -1,0 +1,44 @@
+class Solution:
+    def longestIdealString(self, s: str, k: int) -> int:
+        # make a hash table of all the strings,
+        # count each possible pair of characters to find highest possible combination.
+        # return that number
+        alphabet_tuple = (
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z",
+        )
+        empty_list = [0] * 26
+        
+        for i in s:
+            #print(i, alphabet_tuple.index(i), empty_list[alphabet_tuple.index(i)], empty_list[alphabet_tuple.index(i)] + 1 )
+            empty_list[alphabet_tuple.index(i)] = (empty_list[alphabet_tuple.index(i)] + 1)
+        answer = []
+        for i in range(len(empty_list)-k):
+            print(empty_list[i:i+k],sum(empty_list[i:i+k]))
+            answer.append(sum(empty_list[i:i+k]))
+
+        return max(answer)
